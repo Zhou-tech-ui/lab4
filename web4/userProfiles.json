@@ -1,7 +1,7 @@
 [
   {
-    "firstName": "李",
-    "lastName": "明",
+    "firstName": "Li",
+    "lastName": "Ming",
     "email": "liming@example.com",
     "dateOfBirth": "1992-03-15",
     "preferences": {
@@ -11,15 +11,15 @@
       "subscription": true
     },
     "address": {
-      "street": "中关村大街1号",
-      "city": "北京",
-      "state": "北京市",
+      "street": "No.1 Zhongguancun Street",
+      "city": "Beijing",
+      "state": "Beijing Municipality",
       "zipCode": "100080"
     }
   },
   {
-    "firstName": "王",
-    "lastName": "芳",
+    "firstName": "Wang",
+    "lastName": "Fang",
     "email": "wangfang@example.com",
     "dateOfBirth": "1988-07-22",
     "preferences": {
@@ -29,15 +29,15 @@
       "subscription": false
     },
     "address": {
-      "street": "南京东路2号",
-      "city": "上海",
-      "state": "上海市",
+      "street": "No.2 Nanjing East Road",
+      "city": "Shanghai",
+      "state": "Shanghai Municipality",
       "zipCode": "200001"
     }
   },
   {
-    "firstName": "张",
-    "lastName": "伟",
+    "firstName": "Zhang",
+    "lastName": "Wei",
     "email": "zhangwei@example.com",
     "dateOfBirth": "1995-11-08",
     "preferences": {
@@ -47,9 +47,9 @@
       "subscription": true
     },
     "address": {
-      "street": "天河路3号",
-      "city": "广州",
-      "state": "广东省",
+      "street": "No.3 Tianhe Road",
+      "city": "Guangzhou",
+      "state": "Guangdong Province",
       "zipCode": "510630"
     }
   }
