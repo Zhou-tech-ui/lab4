@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>WEB4 Experiment Demonstration</title>
+  <style>
+    body {font-family: Arial; 
+          margin: 2rem;
+    }
+    table {border-collapse: collapse; 
+           width: 100%; 
+           margin-bottom: 2rem;
+    }
+    th, td {border: 1px solid #ccc; 
+            padding: 8px; 
+            text-align: left; 
+    }
+    th {background: #f2f2f2; 
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Experiment 1: Book List(XML)</h1>
+  <table id="bookTable">
+    <thead>
+      <tr><th>ID</th><th>title</th><th>author</th><th>price</th></tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <h1>Experiment 2: User Profile(JSON)</h1>
+  <table id="userTable">
+    <thead>
+      <tr>
+        <th>name</th><th>email</th><th>birthday</th>
+        <th>theme</th><th>language</th><th>notice</th><th>subscribe</th><th>address</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script>
+    fetch('book.xml')
+      .then(r => r.text())
+      .then(xmlText => {
+        const xml = new DOMParser().parseFromString(xmlText, 'text/xml');
+        const books = Array.from(xml.querySelectorAll('book'));
+        const html = books.map(b => `
+          <tr>
+            <td>${b.getAttribute('id')}</td>
+            <td>${b.querySelector('title').textContent}</td>
+            <td>${b.querySelector('author').textContent}</td>
+            <td>${b.querySelector('price').textContent}</td>
+          </tr>`).join('');
+        document.querySelector('#bookTable tbody').innerHTML = html;
+      });
+    fetch('userProfiles.json')
+      .then(r => {
+        if (!r.ok) throw new Error('Fetch error:' + r.status);
+        return r.json();
+      })
+      .then(users => {
+        const html = users.map(u => `
+          <tr>
+            <td>${u.firstName} ${u.lastName}</td>
+            <td>${u.email}</td>
+            <td>${u.dateOfBirth}</td>
+            <td>${u.preferences.theme}</td>
+            <td>${u.preferences.language}</td>
+            <td>${u.preferences.notifications}</td>
+            <td>${u.preferences.subscription}</td>
+            <td>${u.address.street}, ${u.address.city}, ${u.address.state} ${u.address.zipCode}</td>
+          </tr>`).join('');
+        document.querySelector('#userTable tbody').innerHTML = html;
+      });
+  </script>
+</body>
+</html>

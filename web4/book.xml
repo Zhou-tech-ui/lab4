@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookCatalog>
+  <book id="1">
+    <title>JavaScriptAuthoritative Guide</title>
+    <author>David Flanagan</author>
+    <price>128.00</price>
+  </book>
+  <book id="2">
+    <title>PythonProgramming: From Beginner to Practice</title>
+    <author>Eric Matthes</author>
+    <price>89.00</price>
+  </book>
+  <book id="3">
+    <title>Introduction to Algorithms</title>
+    <author>Thomas H. Cormen</author>
+    <price>158.00</price>
+  </book>
+</bookCatalog>
